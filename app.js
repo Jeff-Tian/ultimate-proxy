@@ -10,7 +10,8 @@ router
     .get('/healthcheck', async ctx => {
         ctx.body = 'everything is ok';
     })
-    .post('/', async ctx => {
+    .post('/proxy', async ctx => {
+        console.log(ctx.request.body);
         ctx.body = await request(ctx.request.body);
     });
 
